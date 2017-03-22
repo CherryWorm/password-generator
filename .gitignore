@@ -24,3 +24,10 @@
 
 ## File-based project format:
 *.iws
+
+## Python
+__pycache__/
+
+
+
+salt
