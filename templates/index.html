@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+<body>
+
+<h1> Generate your password!</h1>
+<form action="/" method="post">
+    <p>Website: <input type="textfield" name="website"></p>
+    <p>Password: <input type="password" name="password"></p>
+    <p>Remove special chars: <input type="checkbox" name="rem"></p>
+    <p>Maximal length: <input type="textfield" name="length" value="44"></p>
+    <p><input type="submit"></p>
+</form>
+
+{% if password %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        window.prompt("Here ya go bud:", "{{ password }}");
+    }, false);
+</script>
+{% endif %}
+
+</body>
+</html>
