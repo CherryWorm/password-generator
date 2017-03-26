@@ -44,7 +44,7 @@ def hello_world():
 
         return render_template('index.html', key=app.config["GOOGLE_KEY"], password=gen_password(website, password, rem, int(length)))
     else:
-        return render_template('index.html')
+        return render_template('index.html', key=app.config["GOOGLE_KEY"])
 
 
 if __name__ == '__main__':
