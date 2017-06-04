@@ -1,17 +1,21 @@
 <html>
 <head>
     <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script>
+       function onSubmit(token) {
+         document.getElementById("form").submit();
+       }
+     </script>
 </head>
 <body>
 
 <h1> Generate your password!</h1>
-<form method="post">
+<form id="form" method="post">
     <p>Website: <input type="textfield" name="website"></p>
     <p>Password: <input type="password" name="password"></p>
     <p>Remove special chars: <input type="checkbox" name="rem"></p>
     <p>Maximal length: <input type="textfield" name="length" value="44"></p>
-    <div class="g-recaptcha" data-sitekey="{{ key }}"></div>
-    <p><input type="submit"></p>
+    <p><button class="g-recaptcha" data-sitekey="{{ key }}" data-callback='onSubmit'>Submit</button></p>
 </form>
 
 {% if password %}
